@@ -1,0 +1,92 @@
+/* CSS específico para as novas páginas - não sobrescreve estilos existentes */
+
+/* Consultório photos hover effect */
+.consultorio-photo img:hover {
+    filter: grayscale(0%) !important;
+    transform: scale(1.05);
+}
+
+/* Smooth transitions for consultorio photos */
+.consultorio-photo img {
+    -webkit-transition: filter 0.3s ease, transform 0.3s ease;
+    -moz-transition: filter 0.3s ease, transform 0.3s ease;
+    -o-transition: filter 0.3s ease, transform 0.3s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Enhanced copy protection for escritos content */
+.conteudo-completo {
+    position: relative;
+}
+
+.conteudo-completo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.conteudo-completo * {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    -webkit-touch-callout: none !important;
+}
+
+/* Prevent text selection in escritos section */
+main {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Allow selection only for preview text and buttons */
+.preview,
+.leia-mais,
+h1, h3 {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Button styles for leia-mais */
+.leia-mais {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cormorant', serif;
+    font-size: 1rem;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #2563eb;
+}
+
+.leia-mais:hover {
+    color: #1e40af !important;
+}
+
+/* Page title styling */
+main h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Responsive adjustments for new pages */
+@media (max-width: 768px) {
+    .consultorio-photo img {
+        height: 48;
+    }
+    
+    main h1 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
